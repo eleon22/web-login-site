@@ -36,4 +36,8 @@ stages:
         dockerfile: $(dockerfilePath)
         tags: |
           $(tag)
-    
+    - task: AzureKeyVault@1
+  inputs:
+    azureSubscription: 'Azure subscription 1(534b7147-540b-4d5b-a27c-870e79270db3)'
+    KeyVaultName: 'lizhutto'
+    SecretsFilter: '*'
